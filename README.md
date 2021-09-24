@@ -1,8 +1,9 @@
 # Testing con Jest
 
-Cool
+## Tecnologías:
 
-let arregloOfLetters = string.split('').map((element) => {
-if (element.charCodeAt() + positions > 90 && element.toUpperCase() === element) {
-}
-});
+- VS Code
+- Git
+- Javascript
+- CLI
+- Linux
