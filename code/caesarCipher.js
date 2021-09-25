@@ -14,61 +14,61 @@ For this one, you may want to split the final function into a few smaller functi
  */
 
 const caesar = (string, positions) => {
-    if (string === '' || typeof string === 'number') {
-        return -1;
-    }
+  if (string === '' || typeof string === 'number') {
+    return -1;
+  }
 
-    if (positions >= 0) {
-        let arregloOfLetters = string.split('').map((element) => {
-            return element.charCodeAt() + positions;
-        });
+  if (positions >= 0) {
+    let arregloOfLetters = string.split('').map((element) => {
+      return element.charCodeAt() + positions;
+    });
 
-        return arregloOfLetters
-            .map((element) => {
-                if (
-                    element > 90 &&
-                    String.fromCharCode(element - positions).toUpperCase() === String.fromCharCode(element - positions)
-                ) {
-                    return 65 + (element - 91);
-                } else if (
-                    element > 122 &&
-                    String.fromCharCode(element - positions).toLowerCase() === String.fromCharCode(element - positions)
-                ) {
-                    return 97 + (element - 123);
-                } else {
-                    return element;
-                }
-            })
-            .map((element) => {
-                return String.fromCharCode(element);
-            })
-            .join('');
-    } else {
-        let arregloOfLetters = string.split('').map((element) => {
-            return element.charCodeAt() + positions;
-        });
+    return arregloOfLetters
+      .map((element) => {
+        if (
+          element > 90 &&
+          String.fromCharCode(element - positions).toUpperCase() === String.fromCharCode(element - positions)
+        ) {
+          return 65 + (element - 91);
+        } else if (
+          element > 122 &&
+          String.fromCharCode(element - positions).toLowerCase() === String.fromCharCode(element - positions)
+        ) {
+          return 97 + (element - 123);
+        } else {
+          return element;
+        }
+      })
+      .map((element) => {
+        return String.fromCharCode(element);
+      })
+      .join('');
+  } else {
+    let arregloOfLetters = string.split('').map((element) => {
+      return element.charCodeAt() + positions;
+    });
 
-        return arregloOfLetters
-            .map((element) => {
-                if (
-                    element < 65 &&
-                    String.fromCharCode(element - positions).toUpperCase() === String.fromCharCode(element - positions)
-                ) {
-                    return 90 - (65 - element - 1);
-                } else if (
-                    element < 97 &&
-                    String.fromCharCode(element - positions).toLowerCase() === String.fromCharCode(element - positions)
-                ) {
-                    return 122 - (97 - element - 1);
-                } else {
-                    return element;
-                }
-            })
-            .map((element) => {
-                return String.fromCharCode(element);
-            })
-            .join('');
-    }
+    return arregloOfLetters
+      .map((element) => {
+        if (
+          element < 65 &&
+          String.fromCharCode(element - positions).toUpperCase() === String.fromCharCode(element - positions)
+        ) {
+          return 90 - (65 - element - 1);
+        } else if (
+          element < 97 &&
+          String.fromCharCode(element - positions).toLowerCase() === String.fromCharCode(element - positions)
+        ) {
+          return 122 - (97 - element - 1);
+        } else {
+          return element;
+        }
+      })
+      .map((element) => {
+        return String.fromCharCode(element);
+      })
+      .join('');
+  }
 };
 
 export { caesar };
